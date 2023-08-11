@@ -28,11 +28,8 @@ export const fetchMovieDetails = async id => {
 export const fetchMovieByQuery = async query => {
   try {
     const data = await axios.get(
-      `search/movie/?query=${query}&api_key=${API_KEY}&include_adult=false&language=en-US&page=1`
-      // 'https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&api_key=d7edc5f9c6032a710ce2eb6fede0fed8'
+      `search/movie?query=${query}&api_key=${API_KEY}&include_adult=false&language=en-US&page=1`
     );
-
-    console.log(data, 'moviedetails');
     return data;
   } catch (error) {
     toast.warning(error.message);

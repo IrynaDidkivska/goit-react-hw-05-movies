@@ -9,24 +9,19 @@ import {
 import { useSearchParams } from 'react-router-dom';
 import { fetchMovieByQuery } from 'services/api';
 
-export const SearchMovie = () => {
-  const [movie, setMovie] = useState([]);
+export const SearchMovie = ({ setSearchResults }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
   const [value, setValue] = useState(query);
 
   useEffect(() => {
     if (query) {
-      fetchMovieByQuery(query).then(
-        res => console.log(res.data.results) || setMovie(res.data.results)
-      );
+      fetchMovieByQuery(query).then(res => setSearchResults(res.data.results));
     }
-  }, [query]);
+  }, [query, setSearchResults]);
 
   const onSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const query = form.elements.query.value.trim();
 
     setSearchParams(value !== '' ? { query: value } : {});
     if (query.trim() === '') {

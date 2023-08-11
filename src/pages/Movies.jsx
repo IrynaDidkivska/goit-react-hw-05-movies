@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import { SearchMovie } from '../components/SearchMovie/SearchMovie';
+import { StyledHomeTitle, StyledLink } from './Home/Home.styled';
 
 const Movies = () => {
-  const [movies, setMovies] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   return (
     <>
-      <SearchMovie />
+      <SearchMovie setSearchResults={setSearchResults} />
 
       <div>
-        <h1>Trenging today</h1>
+        <StyledHomeTitle>Нour search result</StyledHomeTitle>
         <ul>
-          {movies.map(movie => (
+          {searchResults.map(movie => (
             <li key={movie.id}>
-              {/* <StyledLink to={`movies/${trendmovies.id}`} key={trendmovies.id}>
-                {trendmovies.title}
-              </StyledLink> */}
+              <StyledLink to={`movies/${movie.id}`} key={movie.id}>
+                {movie.title}
+              </StyledLink>
             </li>
           ))}
         </ul>
