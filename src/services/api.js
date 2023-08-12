@@ -10,7 +10,7 @@ export const fetchTrendingMovies = async () => {
     );
     return data;
   } catch (error) {
-    toast.warning(error.message);
+    toast.error(error.message);
   }
 };
 
@@ -21,7 +21,7 @@ export const fetchMovieDetails = async id => {
     );
     return data;
   } catch (error) {
-    toast.warning(error.message);
+    toast.error(error.message);
   }
 };
 
@@ -32,6 +32,6 @@ export const fetchMovieByQuery = async query => {
     );
     return data;
   } catch (error) {
-    toast.warning(error.message);
+    toast.error(error.message);
   }
 };

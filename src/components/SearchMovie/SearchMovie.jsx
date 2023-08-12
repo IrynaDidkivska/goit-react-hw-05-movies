@@ -8,6 +8,7 @@ import {
 } from './SearchMovie.styled';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMovieByQuery } from 'services/api';
+import PropTypes from 'prop-types';
 
 export const SearchMovie = ({ setSearchResults }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,8 +25,11 @@ export const SearchMovie = ({ setSearchResults }) => {
     e.preventDefault();
 
     setSearchParams(value !== '' ? { query: value } : {});
-    if (query.trim() === '') {
+    if (!query && !value) {
       toast.warning(`It is hard to search with such little information`);
+      return;
+    } else if (query.toLocaleLowerCase() === value.toLocaleLowerCase()) {
+      toast.info(`Please change your request`);
       return;
     }
   };
@@ -49,3 +53,5 @@ export const SearchMovie = ({ setSearchResults }) => {
     </>
   );
 };
+
+SearchMovie.propTypes = { setSearchResults: PropTypes.func.isRequired };

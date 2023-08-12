@@ -1,8 +1,9 @@
 import React from 'react';
 import { MagnifyingGlass } from 'react-loader-spinner';
+import { styled } from 'styled-components';
 export const Loader = () => {
   return (
-    <div>
+    <LoaderThumb>
       <MagnifyingGlass
         visible={true}
         height="80"
@@ -11,8 +12,13 @@ export const Loader = () => {
         wrapperStyle={{}}
         wrapperClass="MagnifyingGlass-wrapper"
         glassColor="#c0efff"
-        color="#e15b64"
+        color="#faa60a"
       />
-    </div>
+    </LoaderThumb>
   );
 };
+export const LoaderThumb = styled.div`
+  display: flex;
+
+  margin: 0 auto;
+`;

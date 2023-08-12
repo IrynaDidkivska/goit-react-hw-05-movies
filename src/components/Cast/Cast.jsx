@@ -20,7 +20,11 @@ const Cast = () => {
         {cast.map(actor => (
           <StyledCastItem key={actor.id}>
             <StyledCastImg
-              src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
+              src={
+                actor.profile_path
+                  ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
+                  : `https://community.adobe.com/legacyfs/online/avatars/a829412_stormtrooper_001.png`
+              }
               alt={actor.name}
             />
             <p>Name: {actor.name}</p>
