@@ -1,3 +1,4 @@
+import { SiThemoviedatabase } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
@@ -9,8 +10,9 @@ export const StyledHomeTitle = styled.h1`
 
 export const StyledLink = styled(Link)`
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
   margin-top: 10px;
   margin-left: 30px;
   font-weight: 500;
@@ -20,4 +22,10 @@ export const StyledLink = styled(Link)`
     color: orange;
     font-weight: 600;
   }
+`;
+
+export const Icon = styled(SiThemoviedatabase)`
+  color: orange;
+  width: 1.5em;
+  height: 1.5em;
 `;

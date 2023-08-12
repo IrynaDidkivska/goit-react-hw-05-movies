@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { styled } from 'styled-components';
 
+export const StyledHeader = styled.header`
+  padding: 10px;
+  border-bottom: 2px orange solid;
+`;
 export const StyledList = styled.ul`
   display: flex;
   align-items: center;
@@ -12,7 +16,6 @@ export const StyledLink = styled(NavLink)`
   align-items: center;
   justify-content: center;
   gap: 5px;
-  margin-top: 10px;
   font-size: 18px;
   font-weight: 700;
   color: #4083d4;
@@ -25,4 +28,6 @@ export const StyledLink = styled(NavLink)`
 
 export const StyledOutlet = styled.div`
   padding: 0 15px 0 15px;
+  display: block;
+  margin: 0 auto;
 `;

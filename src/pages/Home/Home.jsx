@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { StyledHomeTitle, StyledLink } from './Home.styled';
+import { Icon, StyledHomeTitle, StyledLink } from './Home.styled';
 import { fetchTrendingMovies } from 'services/api';
 import { useLocation } from 'react-router-dom';
+// import { SiThemoviedatabase } from 'react-icons/si';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -18,6 +19,7 @@ const Home = () => {
         {movies.map(trendmovies => (
           <li key={trendmovies.id}>
             <StyledLink to={`movies/${trendmovies.id}`} state={{ location }}>
+              <Icon />
               {trendmovies.title}
             </StyledLink>
           </li>
