@@ -2,17 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { StyledAuthorItem, StyledAuthorList } from './Reviews.styled';
+import { fetchMoviesRewievs } from 'services/api';
 
 const Reviews = () => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=d7edc5f9c6032a710ce2eb6fede0fed8&language=en-US`
-      )
-      .then(res => setReviews(res.data.results));
+    fetchMoviesRewievs(id).then(res => setReviews(res.data.results));
   }, [id]);
   return (
     <div>

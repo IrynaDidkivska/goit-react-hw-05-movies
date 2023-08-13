@@ -47,3 +47,15 @@ export const fetchCastMovie = async id => {
     toast.error(error.message);
   }
 };
+
+export const fetchMoviesRewievs = async id => {
+  try {
+    const data = await axios.get(
+      `movie/${id}/reviews?api_key=${API_KEY}&language=en-US`
+    );
+
+    return data;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};

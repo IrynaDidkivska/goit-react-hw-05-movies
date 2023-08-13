@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const StyledAuthorList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
 `;
