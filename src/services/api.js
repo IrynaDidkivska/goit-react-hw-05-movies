@@ -35,3 +35,15 @@ export const fetchMovieByQuery = async query => {
     toast.error(error.message);
   }
 };
+
+export const fetchCastMovie = async id => {
+  try {
+    const data = await axios.get(
+      `movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+    );
+
+    return data;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};

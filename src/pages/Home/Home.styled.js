@@ -13,14 +13,16 @@ export const StyledLink = styled(Link)`
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
   margin-left: 30px;
+  padding: 3px;
   font-weight: 500;
   color: #4083d4;
   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     color: orange;
     font-weight: 600;
+    border-radius: 5px;
+    background-color: #000;
   }
 `;
 

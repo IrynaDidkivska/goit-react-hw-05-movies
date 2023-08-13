@@ -6,6 +6,25 @@ export const StyledLink = styled(Link)`
   align-items: center;
   justify-content: flex-start;
   gap: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #4083d4;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    color: orange;
+    border-radius: 5px;
+    background-color: #000;
+  }
+`;
+export const StyledGoBack = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 16px;

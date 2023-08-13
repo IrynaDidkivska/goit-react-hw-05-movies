@@ -15,7 +15,7 @@ export const StyledCastItem = styled.li`
   flex-grow: 1;
   gap: 10px;
   padding: 10px;
-  width: 250px;
+  width: 200px;
 
   border-radius: 15px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),

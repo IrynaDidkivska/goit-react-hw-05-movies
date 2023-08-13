@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { TiArrowBackOutline } from 'react-icons/ti';
 import {
   Genres,
@@ -9,6 +9,7 @@ import {
   StyledTitle,
   StyledWrapper,
   StyledLink,
+  StyledGoBack,
 } from './MovieDetails.styled';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
@@ -16,8 +17,10 @@ import { fetchMovieDetails } from 'services/api';
 
 const MovieDetails = () => {
   const location = useLocation();
+  console.log(location);
   const { id } = useParams();
   const [movie, setMovie] = useState({});
+  const goBackLink = useRef(location.state?.location);
 
   useEffect(() => {
     fetchMovieDetails(id).then(res => setMovie(res.data));
@@ -26,10 +29,10 @@ const MovieDetails = () => {
   const raiting = ((vote_average / 100) * 100).toFixed(2) + '%';
   return (
     <div>
-      <StyledLink to={location.state?.from ?? '/'}>
+      <StyledGoBack to={goBackLink.current}>
         <TiArrowBackOutline style={{ width: '1.5em', height: '1.5em' }} />
         Go Back
-      </StyledLink>
+      </StyledGoBack>
       <StyledMovieList>
         <StyledMovieItem key={title}>
           <StyledMovieImg
@@ -49,10 +52,10 @@ const MovieDetails = () => {
       </StyledMovieList>
       <StyledAddText>Additional information</StyledAddText>
       <StyledWrapper>
-        <StyledLink to={`cast`} state={{ from: location }}>
+        <StyledLink to="cast" state={{ location }}>
           Cast
         </StyledLink>
-        <StyledLink to={`reviews`} state={{ from: location }}>
+        <StyledLink to="reviews" state={{ location }}>
           Reviews
         </StyledLink>
       </StyledWrapper>

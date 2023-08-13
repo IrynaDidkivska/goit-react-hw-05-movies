@@ -14,5 +14,7 @@ export const StyledLink = styled(Link)`
   &:hover {
     transform: scale(1.1);
     color: orange;
+    border-radius: 5px;
+    background-color: #000;
   }
 `;

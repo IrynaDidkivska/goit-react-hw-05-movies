@@ -16,6 +16,7 @@ export const StyledLink = styled(NavLink)`
   align-items: center;
   justify-content: center;
   gap: 5px;
+  padding: 3px;
   font-size: 18px;
   font-weight: 700;
   color: #4083d4;
@@ -23,6 +24,8 @@ export const StyledLink = styled(NavLink)`
   &:hover {
     transform: scale(1.1);
     color: orange;
+    border-radius: 5px;
+    background-color: #000;
   }
 `;
 
