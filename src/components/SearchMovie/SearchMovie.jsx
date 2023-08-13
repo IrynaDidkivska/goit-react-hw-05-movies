@@ -32,6 +32,7 @@ export const SearchMovie = ({ setSearchResults }) => {
       toast.info(`Please change your request`);
       return;
     }
+
   };
 
   return (
