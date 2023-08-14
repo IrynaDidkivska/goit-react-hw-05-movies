@@ -39,15 +39,17 @@ const MovieDetails = () => {
             src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
             alt="{title}"
           />
-          <StyledTitle>{title}</StyledTitle>
-          <p> User score: {raiting}</p>
-          <h3>Overview </h3>
-          <p>{overview}</p>
-          <h3>Genres</h3>
-          <Genres>
-            {genres &&
-              genres.map(genre => <li key={genre.id}>{genre.name}</li>)}
-          </Genres>
+          <div>
+            <StyledTitle>{title}</StyledTitle>
+            <p> User score: {raiting}</p>
+            <h3>Overview </h3>
+            <p>{overview}</p>
+            <h3>Genres</h3>
+            <Genres>
+              {genres &&
+                genres.map(genre => <li key={genre.id}>{genre.name}</li>)}
+            </Genres>
+          </div>
         </StyledMovieItem>
       </StyledMovieList>
       <StyledAddText>Additional information</StyledAddText>
